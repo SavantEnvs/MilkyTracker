@@ -1,0 +1,10 @@
+project: savantenvs/MilkyTracker
+target: fuzz_instrument
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_instrument/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_instrument
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/fuzz_instrument/fuzz_instrument.dict
